@@ -1,7 +1,7 @@
 <template name="entrySignedIn">
 {{#if profileUrl}}
   {{#wrapLinksLi}}
-    <a class='profileLink' href='{{profileUrl}}'>{{{beforeSignedInAs}}}{{signedInAs}}</a>
+    <a class='profileLink' href='{{pathFor 'profile' }}'>{{{beforeSignedInAs}}}{{signedInAs}}</a>
   {{/wrapLinksLi}}
 {{else}}
   {{#wrapLinksLi}}
