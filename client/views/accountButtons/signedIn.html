@@ -7,7 +7,7 @@
     <!-- This is the dropdown -->
     <div class="uk-dropdown uk-dropdown-small">
       <ul class="uk-nav uk-nav-dropdown">
-        <li><a href="{{pathFor 'profile' }}">Profile</a></li>
+        <li>{{#each users}}<a href="{{pathFor 'profile' }}">Profile</a>{{/each}}</li>
         <li><a href="/sign-out">{{{beforeSignOut}}}{{t9n "signOut"}}</a></li>
       </ul>
     </div>
