@@ -1,15 +1,16 @@
 <template name="entrySignedIn">
-{{#if profileUrl}}
-  {{#wrapLinksLi}}
-    <a class='profileLink' href='{{pathFor 'profile' }}'>{{{beforeSignedInAs}}}{{signedInAs}}</a>
-  {{/wrapLinksLi}}
-{{else}}
-  {{#wrapLinksLi}}
-    <p class="navbar-text">{{{beforeSignedInAs}}}{{signedInAs}}</p>
-  {{/wrapLinksLi}}
-{{/if}}
+  <div class="uk-button-dropdown" data-uk-dropdown>
 
-{{#wrapLinksLi}}
-  <a href="/sign-out">{{{beforeSignOut}}}{{t9n "signOut"}}</a>
-{{/wrapLinksLi}}
+    <!-- This is the button toggling the dropdown -->
+    <button class="uk-button uk-button-primary">{{{beforeSignedInAs}}}{{signedInAs}}</button>
+
+    <!-- This is the dropdown -->
+    <div class="uk-dropdown uk-dropdown-small">
+      <ul class="uk-nav uk-nav-dropdown">
+        <li><a href='{{pathFor 'profile' }}'>Profile</a></li>
+        <li><a href="/sign-out">{{{beforeSignOut}}}{{t9n "signOut"}}</a></li>
+      </ul>
+    </div>
+
+  </div>
 </template>
