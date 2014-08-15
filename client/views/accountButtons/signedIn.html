@@ -7,8 +7,10 @@
     <!-- This is the dropdown -->
     <div class="uk-dropdown uk-dropdown-small">
       <ul class="uk-nav uk-nav-dropdown">
-        <li><a href="{{pathFor 'profile' }}">Profile</a></li>
+      {{#each users}}
+       <li><a href="{{pathFor 'profile' }}">Profile</a></li>
         <li><a href="{{pathFor 'editProfile'}} ">Edit Profile</a></li>
+        {{/each}}
         <li><a href="/list-asset">List an Asset</a></li>
         <li><a href="/user/manage-assets">Manage Assets</a></li>
         <li class="uk-nav-divider"></li>
