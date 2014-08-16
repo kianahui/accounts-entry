@@ -25,6 +25,7 @@ Router.map ->
 
   @route "entrySignUp",
     path: "/sign-up"
+    layoutTemplate: "noSidebarLayout"
     onBeforeAction: ->
       Session.set "entryError", undefined
       Session.set "buttonText", "up"
@@ -34,7 +35,6 @@ Router.map ->
       userRendered = undefined
       if AccountsEntry.settings.signUpTemplate
         @template = AccountsEntry.settings.signUpTemplate
-        @layoutTemplate = noSidebarLayout
         pkgRendered = Template.entrySignUp.rendered
         userRendered = Template[@template].rendered
         if userRendered
@@ -47,12 +47,14 @@ Router.map ->
         Template[@template].helpers AccountsEntry.entrySignUpHelpers
 
   @route "entryForgotPassword",
-    path: "/forgot-password"
+    path: "/forgot-password",
+    layoutTemplate: "noSidebarLayout",
     onBeforeAction: ->
       Session.set "entryError", undefined
 
   @route "entrySignOut",
-    path: "/sign-out"
+    path: "/sign-out",
+    layoutTemplate: "noSidebarLayout",
     onBeforeAction: (pause) ->
       Session.set "entryError", undefined
       if AccountsEntry.settings.homeRoute
@@ -62,7 +64,9 @@ Router.map ->
       pause()
 
   @route "entryResetPassword",
-    path: "reset-password/:resetToken"
+    path: "reset-password/:resetToken",
+    layoutTemplate: "noSidebarLayout"
     onBeforeAction: ->
       Session.set "entryError", undefined
       Session.set "resetToken", @params.resetToken
+
