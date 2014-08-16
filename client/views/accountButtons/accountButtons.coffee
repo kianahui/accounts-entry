@@ -44,5 +44,5 @@ Template.entryAccountButtons.helpers
 
 Template.entrySignedIn.helpers entryAccountButtonsHelpers
 
-Template.entrySignedIn.users = ->
-  Meteor.users.find()
+Template.entrySignedIn.user = ->
+  Meteor.user()
