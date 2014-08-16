@@ -1,6 +1,7 @@
 Router.map ->
   @route "entrySignIn",
-    path: "/sign-in"
+    path: "/sign-in",
+    layoutTemplate: "noSidebarLayout",
     onBeforeAction: ->
       Session.set "entryError", undefined
       Session.set "buttonText", "in"
